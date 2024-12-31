@@ -42,29 +42,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="POST" action="" class="space-y-4">
         <div>
             <label for="username" class="block text-lg font-semibold mb-2">Username:</label>
-            <input type="text" name="username" id="username" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <input type="text" name="username" id="username" required
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
         <div>
             <label for="email" class="block text-lg font-semibold mb-2">Email:</label>
-            <input type="email" name="email" id="email" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <input type="email" name="email" id="email" required
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
         <div>
             <label for="password" class="block text-lg font-semibold mb-2">Password:</label>
-            <input type="password" name="password" id="password" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <input type="password" name="password" id="password" required
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
         <div>
             <label for="role" class="block text-lg font-semibold mb-2">Role:</label>
-            <select name="role" id="role" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <select name="role" id="role"
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <option value="subscriber">Subscriber</option>
                 <option value="contributor">Contributor</option>
                 <option value="author">Author</option>
             </select>
         </div>
-        <input type="hidden" name="quote_user_nonce" value="<?php echo wp_create_nonce('quote_user_registration_nonce'); ?>">
+        <input type="hidden" name="quote_user_nonce"
+            value="<?php echo wp_create_nonce('quote_user_registration_nonce'); ?>">
         <div class="text-center">
-            <input type="submit" value="Register" class="bg-indigo-600 text-white py-3 px-6 rounded-md cursor-pointer hover:bg-indigo-700 focus:outline-none">
+            <input type="submit" value="Register"
+                class="bg-indigo-600 text-white py-3 px-6 rounded-md cursor-pointer hover:bg-indigo-700 focus:outline-none">
         </div>
     </form>
+
+    <div class="text-center mt-4">
+        <p>Already have an account? <a href="<?php echo esc_url(home_url('/login/')); ?>"
+                class="text-indigo-600 hover:underline">Log in here</a>.</p>
+    </div>
+
 </div>
 
 <?php
